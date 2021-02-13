@@ -36,9 +36,6 @@ export class MoviesController {
 
   @Patch('/:id')
   patchMovie(@Param('id') id: string, @Body() movieData) {
-    return {
-      ...movieData,
-      updateMovie: id,
-    };
+    return this.moviesService.patchMovie(id, movieData);
   }
 }
